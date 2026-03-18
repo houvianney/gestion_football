@@ -28,9 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['code'])) {
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<?php include('menu.php'); ?>
 <div class="form-container">
-    <?php include('menu.php'); ?>
+    
 
     <h2>Modification du projet</h2>
 

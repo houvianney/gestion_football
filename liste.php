@@ -46,6 +46,7 @@ if ($main_script) {
                 <th>Date de lancement</th>
                 <th>Durée (jours)</th>
                 <th>Localité</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -56,6 +57,7 @@ if ($main_script) {
                 <td><?= htmlspecialchars($row['dateLancement']) ?></td>
                 <td><?= htmlspecialchars($row['duree'])         ?></td>
                 <td><?= htmlspecialchars($row['nomLocalite'])   ?></td>
+                <td><a href="modification.php?code=<?= htmlspecialchars($row['codeProjet']) ?>" class="btn-modifier">Modifier</a></td>
             </tr>
             <?php endwhile; ?>
         </tbody>

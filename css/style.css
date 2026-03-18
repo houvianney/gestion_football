@@ -71,6 +71,20 @@ h2 {
     font-weight: bold;
 }
 
+.btn-modifier {
+    background-color: #4CAF50;
+    color: white;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 11px;
+    display: inline-block;
+}
+
+.btn-modifier:hover {
+    background-color: #45a049;
+}
+
 /* ── Messages ── */
 .message-success {
     color: green;
