@@ -1,0 +1,190 @@
+/* style.css */
+* {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #FFEEEE;
+    margin: 20px;
+}
+
+h2 {
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* ── Formulaire ── */
+.form-container {
+    border: 1px solid #999;
+    padding: 20px 30px;
+    max-width: 650px;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.form-row label {
+    width: 160px;
+    font-weight: normal;
+}
+
+.form-row input[type="text"],
+.form-row input[type="date"],
+.form-row input[type="number"],
+.form-row select {
+    flex: 1;
+    padding: 4px 6px;
+    border: 1px solid #aaa;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.form-buttons button {
+    padding: 6px 20px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background-color: #e0e0e0;
+    border: 1px solid #999;
+}
+
+.btn-cancel {
+    background-color: #e0e0e0;
+    border: 1px solid #999;
+    font-weight: bold;
+}
+
+/* ── Messages ── */
+.message-success {
+    color: green;
+    text-align: center;
+    margin: 10px auto;
+    max-width: 650px;
+}
+
+.message-error {
+    color: red;
+    text-align: center;
+    margin: 10px auto;
+    max-width: 650px;
+}
+
+/* ── Tableau liste ── */
+.table-container {
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+.table-container h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+table th {
+    background-color: #cc4444;
+    color: #fff;
+    padding: 6px 10px;
+    text-align: left;
+    font-size: 12px;
+    border: 1px solid #aaa;
+}
+
+table td {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9e8e8;
+}
+
+table tr:hover {
+    background-color: #f0d0d0;
+}
+/* ══════════════════════════════════════
+   NAVBAR
+   ══════════════════════════════════════ */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #cc3333; /* bg-primary adapté au thème #FFEEEE */
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #ffe0e0;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px !important; 
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff !important;
+}
+
+/* ── Lien actif (page courante) ── */
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid #fff;
+}
