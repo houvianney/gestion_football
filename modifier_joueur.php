@@ -2,7 +2,6 @@
 // modifier_joueur.php
 include "connexion.php";
 
-// ─── POST : traitement de la mise à jour ───────────────────────
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id_Joueur'])) {
 
     $id             = intval($_POST['id_Joueur']);
@@ -12,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id_Joueur'])) {
     $poste          = mysqli_real_escape_string($connexion, $_POST['poste']);
     $ancienne_photo = mysqli_real_escape_string($connexion, $_POST['ancienne_photo']);
 
-    // ── Gestion upload nouvelle photo (identique à tr_ajoutVoie.php) ──
     $image_name = $ancienne_photo; // on conserve l'ancienne par défaut
 
     if (isset($_FILES["image_joueur"]) && $_FILES["image_joueur"]["error"] == UPLOAD_ERR_OK) {
@@ -78,7 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id_Joueur'])) {
     exit;
 }
 
-// ─── GET : affichage du formulaire pré-rempli ──────────────────
 if (!isset($_GET['id'])) {
     header("location: gestion_joueurs.php");
     exit;

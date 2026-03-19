@@ -1,5 +1,4 @@
 <?php
-// enregistrement_club.php — Question 4b
 include "connexion.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {

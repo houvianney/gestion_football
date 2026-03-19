@@ -10,7 +10,6 @@ if (isset($_POST['submit'])) {
     $id_Club = mysqli_real_escape_string($connexion, $_POST['id_Club']);
     $poste   = mysqli_real_escape_string($connexion, $_POST['poste']);
 
-    // ── 2. Gestion de l'upload de la photo (identique à tr_ajoutVoie.php) ──
     $image_name = '';
 
     if (isset($_FILES["image_joueur"]) && $_FILES["image_joueur"]["error"] == UPLOAD_ERR_OK) {
