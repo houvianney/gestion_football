@@ -5,7 +5,7 @@ include "connexion.php";
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Saisie des projets</title>
+    <title>Saisie des communes</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@ include "connexion.php";
 
 if (isset($_GET['statut'])) {
     if ($_GET['statut'] === 'ok') {
-        echo '<p class="message-success">&#10003; Projet enregistré avec succès.</p>';
+        echo '<p class="message-success">&#10003; Commune enregistrée avec succès.</p>';
     } elseif ($_GET['statut'] === 'erreur') {
         $msg = isset($_GET['msg']) ? htmlspecialchars($_GET['msg']) : "Erreur inconnue.";
         echo '<p class="message-error">&#10007; Erreur : ' . $msg . '</p>';
@@ -25,48 +25,31 @@ if (isset($_GET['statut'])) {
 
 
 <div class="form-container">
-    <h2>Saisie des projets</h2>
+    <h2>Saisie des communes</h2>
 
     <form action="enregistrement.php" method="POST">
 
         <div class="form-row">
-            <label for="codeProjet">Code projet</label>
-            <input type="text" id="codeProjet" name="codeProjet"
-                   placeholder="xxxxxx" maxlength="10" required>
-        </div>
-
-        <div class="form-row">
-            <label for="nomProjet">Nom du projet</label>
-            <input type="text" id="nomProjet" name="nomProjet"
+            <label for="nomCommune">Nom de la commune</label>
+            <input type="text" id="nomCommune" name="lib_Commune"
                    placeholder="xxxxxx" required>
         </div>
 
         <div class="form-row">
-            <label for="dateLancement">Date de lancement</label>
-            <input type="date" id="dateLancement" name="dateLancement" required>
-        </div>
-
-        <div class="form-row">
-            <label for="duree">Durée</label>
-            <input type="number" id="duree" name="duree"
-                   placeholder="xxxxxx" min="1" required>
-        </div>
-
-        <div class="form-row">
-            <label for="codLocalite">Localité</label>
-            <select id="codLocalite" name="codLocalite" required>
+            <label for="id_depart">Département</label>
+            <select id="id_depart" name="id_depart" required>
                 <option value="">-- Choisir --</option>
                 <?php
                 
-                $sql = "SELECT codLocalite, nomLocalite FROM Localite ORDER BY nomLocalite";
+                $sql = "SELECT id_departement, lib_depart FROM departement ORDER BY lib_depart ASC";
                 $result = mysqli_query($connexion, $sql);
                 if ($result && mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<option value="' . htmlspecialchars($row['codLocalite']) . '">'
-                           . htmlspecialchars($row['nomLocalite']) . '</option>';
+                        echo '<option value="' . htmlspecialchars($row['id_departement']) . '">'
+                           . htmlspecialchars($row['lib_depart']) . '</option>';
                     }
                 } else {
-                    echo '<option value="" disabled>Aucune localité trouvée</option>';
+                    echo '<option value="" disabled>Aucun département trouvé</option>';
                 }
                 ?>
             </select>

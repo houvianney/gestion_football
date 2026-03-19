@@ -3,7 +3,7 @@
 $host     = "localhost";
 $utilisateur = "root";     
 $motdepasse  = "";      
-$base     = "gestion_projet"; 
+$base     = "gestion_football"; 
 
 $connexion = mysqli_connect($host, $utilisateur, $motdepasse, $base);
 
